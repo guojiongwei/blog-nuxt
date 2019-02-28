@@ -13,7 +13,7 @@
     import axios from 'axios'
     export default {
         async asyncData({ params }) {
-            let { data } = await axios.get('http://guojiongwei.com/client_demo_api/blog/list', { params: {type: params.type, pagesize: 10}})
+            let { data } = await axios.get('https://guojiongwei.com/client_demo_api/blog/list', { params: {type: params.type, pagesize: 10}})
             return {
                 blogTypes: [ 
                     { name: '全部' },
