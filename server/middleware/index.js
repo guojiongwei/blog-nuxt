@@ -15,7 +15,7 @@ export default app => {
         // console.log('https' + ctx.request.href.slice(4))
         if(ctx.request.protocol == 'http') {
             ctx.redirect('https' + ctx.request.href.slice(4))
-            // return
+            return
         }
         if (ctx.url == '/favicon.ico') return
 
