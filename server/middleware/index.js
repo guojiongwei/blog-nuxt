@@ -11,7 +11,12 @@ import compress from 'koa-compress'
 export default app => {
 
     //缓存拦截器
-    app.use(async (ctx, next) => { 
+    app.use(async (ctx, next) => {   
+        // console.log('https' + ctx.request.href.slice(4))
+        if(ctx.request.protocol == 'http') {
+            ctx.redirect('https' + ctx.request.href.slice(4))
+            return
+        }
         if (ctx.url == '/favicon.ico') return
 
         await next()
