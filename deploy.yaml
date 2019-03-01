@@ -1,0 +1,21 @@
+apps:
+  script: ./server/index.js    # ����ļ�
+  name: 'nuxt-myapp'       # ��������
+  env:           # ��������
+   COMMON_VARIABLE: true
+  env_production:
+   NODE_ENV: production
+
+deploy:           # ����ű�
+ production:        # ��������
+  user: root      # ���������û���
+  host: 39.106.41.116   # ��������ip��ַ
+  port: 22        # ssh�˿�
+  ref: origin/master   # Ҫ��ȡ��git��֧
+  ssh_options: StrictHostKeyChecking=no # SSH ��Կ���
+  repo: https://github.com/guojiongwei/nuxt-myapp.git # Զ�ֿ̲��ַ
+  path: /wuyou/src/nuxt-myapp       # ��ȡ��������ĳ��Ŀ¼��
+  pre-deploy: git fetch --all # ����ǰִ��
+  post-deploy: npm install && npm run build && pm2 reload deploy.yaml --env production # �����ִ��
+  env:
+   NODE_ENV: production
