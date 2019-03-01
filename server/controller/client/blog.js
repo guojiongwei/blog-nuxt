@@ -3,7 +3,7 @@ import path from 'path'
 
 module.exports = {
     async list(ctx, next) {
-        // console.log('----------------获取博客列表 client_demo_api/blog/list-----------------------');
+        console.log('----------------获取博客列表 client_demo_api/blog/list-----------------------');
         let { type = '', pageindex = 1, pagesize = 5} = ctx.request.query;
         // console.log('type:'+type+','+'pageindex:'+pageindex +','+ 'pagesize:'+pagesize)
         try {

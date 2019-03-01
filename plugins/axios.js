@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import axios from 'axios'
-axios.defaults.baseURL = process.env.NODE_ENV == 'production' ? 'https://guojiongwei.com' : 'http://127.0.0.1'
+axios.defaults.baseURL = process.env.NODE_ENV == 'production' ? 'https://guojiongwei.com/' : 'https://127.0.0.1/'
 function apiGet (url, params) {
     return axios.get(url, params).then(res => {
-        resolve(res)
+        return res
     }).catch(err => {
-        console.log(err)
-        return err
+        let data = {data: []}
+        return data
     })
 }
  
@@ -19,7 +19,7 @@ let main = {
 Vue.use(main); // 这里不能丢
  
 // 这里是 为了在 asyncData 方法中使用
-export default ({ app }) => {
+export default ({ app  }) => {
     // Set the function directly on the context.app object
     app.$apiGet = apiGet // 名称
 }

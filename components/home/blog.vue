@@ -23,7 +23,9 @@
         props: {
             blogList: {
                 type: Array,
-                default: []
+                default: () => {
+                    return []
+                }
             }
         }
     }

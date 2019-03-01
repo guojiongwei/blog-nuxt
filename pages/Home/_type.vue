@@ -12,8 +12,8 @@
 <script>
     import axios from 'axios'
     export default {
-        async asyncData({ params }) {
-            let { data } = await axios.get('https://guojiongwei.com/client_demo_api/blog/list', { params: {type: params.type, pagesize: 10}})
+        async asyncData({ app, params }) {
+            let { data } = await app.$apiGet('client_demo_api/blog/list', { params: {type: params.type, pagesize: 10}})
             return {
                 blogTypes: [ 
                     { name: '全部' },

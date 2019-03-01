@@ -23,8 +23,8 @@
 <script>
 import axios from 'axios'
 export default {
-    async asyncData({ params }) {
-        let { data } = await axios.get('https://guojiongwei.com/client_demo_api/blog/info', { params: {_id: params.id}})
+    async asyncData({ app, params }) {
+        let { data } = await app.$apiGet('client_demo_api/blog/info', { params: {_id: params.id}})
         return {
             blogInfo: data.data,
             blogHtml: data.data.html.replace(/<a /gi, `<a target='_blank'`)

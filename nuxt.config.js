@@ -38,7 +38,7 @@ module.exports = {
   plugins: [
     '~/plugins/custom-components.js', 
     '~/plugins/filters.js', 
-    {src: '~/plugins/axios', ssr: true}
+    '~/plugins/axios.js'
   ],
 
   /*
