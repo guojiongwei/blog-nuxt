@@ -53,6 +53,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: { allChunks: true },
     /*
     ** You can extend webpack config here
     */
