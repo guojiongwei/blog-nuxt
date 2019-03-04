@@ -17,7 +17,7 @@ export default app => {
             ctx.redirect('https' + ctx.request.href.slice(4))
             return
         }
-        if (ctx.url == '/favicon.ico') return
+        // if (ctx.url == '/favicon.ico') return
 
         await next()
         ctx.status = 200

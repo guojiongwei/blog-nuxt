@@ -21,8 +21,19 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
+    head() {
+        return {
+            title: `无忧博客-${this.blogInfo.title}`,
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'viewport', hid: 'description', content: 'width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=0' },
+                { name: 'keywords', hid: 'description', content: `${this.blogInfo.title}` },
+                { name: 'description', hid: 'description', content: `${this.blogInfo.title}` },
+                { name: 'author', hid: 'author', content: "郭炯韦" }
+            ]
+        }
+    },
     async asyncData({ app, params }) {
         let { data } = await app.$apiGet('client_demo_api/blog/info', { params: {_id: params.id}})
         return {

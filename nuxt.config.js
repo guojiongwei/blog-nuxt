@@ -7,11 +7,13 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: "无忧个人博客 - 一个简约的个人博客",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { name: 'keywords', hid: 'description', content: '个人博客，简约博客，无忧个人博客，无忧' },
+      { name: 'description', hid: 'description', content: '无忧的个人博客，将与广大前端爱好共同分享最新技术和技术中遇到的问题' },
+      { name: 'author', hid: 'author', content: "郭炯韦" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
