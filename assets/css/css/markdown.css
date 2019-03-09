@@ -93,10 +93,11 @@
 }
 
 .fmt blockquote {
-    border-left: 2px solid #009A61;
+    border-left: 3px solid #009A61;
     background: #F6F6F6;
-    color: #555;
-    font-size: 1em
+    color: #333;
+    font-size: 1em;
+    padding: 10 15px
 }
 
 .fmt pre,.fmt code {
