@@ -2,7 +2,7 @@
     <section class="info-wrapper df-center">
         <div class="info-box">
             <div class="avatar"></div>
-            <h2 class="name">无忧大帝</h2>
+            <h2 class="name">郭炯韦的个人博客</h2>
         </div>
     </section>
 </template>

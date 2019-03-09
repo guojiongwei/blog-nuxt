@@ -24,7 +24,7 @@
 export default {
     head() {
         return {
-            title: `无忧博客-${this.blogInfo.title}`,
+            title: `郭炯韦博客-${this.blogInfo.title}`,
             meta: [
                 { charset: 'utf-8' },
                 { name: 'viewport', hid: 'description', content: 'width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=0' },
