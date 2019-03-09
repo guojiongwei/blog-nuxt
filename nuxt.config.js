@@ -15,13 +15,13 @@ module.exports = {
       { name: 'description', hid: 'description', content: '郭炯韦的个人博客，将与广大前端爱好共同分享最新技术和技术中遇到的问题' },
       { name: 'author', hid: 'author', content: "郭炯韦" }
     ],
+    script: [
+      { innerHTML: rem, type: 'text/javascript', charset: 'utf-8'}
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-        { innerHTML: rem, type: 'text/javascript', charset: 'utf-8'}
-      ],
-      __dangerouslyDisableSanitizers: ['script']
+    ]
   },
 
   /*
