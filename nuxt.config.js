@@ -1,5 +1,5 @@
 const pkg = require('./package')
-const rem = '(function(win,doc){var docEl=doc.documentElement,resizeEvt="orientationchange" in window?"orientationchange":"resize",refresh=function(){var w=docEl.clientWidth,dpr=win.devicePixelRatio||1;docEl.style.fontSize=100*(w/750)+"px";function setBodyFontSize(){if(doc.body){doc.body.style.fontSize="16px"}else{doc.addEventListener("DOMContentLoaded",refresh)}}setBodyFontSize()};refresh();if(!doc.addEventListener){return}win.addEventListener(resizeEvt,refresh,false)})(window,document);';
+const rem = '!function(e){var t,n=document,i=window,o=n.documentElement;function u(){var t=o.getBoundingClientRect().width/e*100;o.style.fontSize=t+"px"}u(),i.addEventListener("resize",function(){clearTimeout(t),t=setTimeout(u,300)},!1),i.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(t),t=setTimeout(u,300))},!1)}(750);';
 module.exports = {
   mode: 'universal',
 
@@ -8,6 +8,10 @@ module.exports = {
   */
   head: {
     title: "郭炯韦个人博客 - 一个简约的个人博客",
+    script: [
+      { innerHTML: rem, type: 'text/javascript', charset: 'utf-8'}
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,10 +19,6 @@ module.exports = {
       { name: 'description', hid: 'description', content: '郭炯韦的个人博客，将与广大前端爱好共同分享最新技术和技术中遇到的问题' },
       { name: 'author', hid: 'author', content: "郭炯韦" }
     ],
-    script: [
-      { innerHTML: rem, type: 'text/javascript', charset: 'utf-8'}
-    ],
-    __dangerouslyDisableSanitizers: ['script'],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
