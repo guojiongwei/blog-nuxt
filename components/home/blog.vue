@@ -63,7 +63,7 @@
                 bottom: 35px;left:0;
                 width: 150px;
                 height: 34px;
-                background: rgba(186,164,119,0.99);
+                // background: rgba(186,164,119,0.99);
                 background-image: url('~assets/images/date-bg.svg');
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -100,6 +100,7 @@
                 color: #db5640;
                 line-height: 30px;
                 width: 80%;
+                padding-right: 5px;
                 margin: 0 auto;
                 padding-top: 10px;
             }
