@@ -100,7 +100,7 @@
                 color: #db5640;
                 line-height: 30px;
                 width: 80%;
-                padding-right: 5px;
+                padding-right: 20px;
                 margin: 0 auto;
                 padding-top: 10px;
             }

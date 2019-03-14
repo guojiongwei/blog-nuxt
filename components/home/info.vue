@@ -37,8 +37,9 @@
             }
         }
         .name {
-            margin: 20px 0 10px 0;
-            color: rgba(186, 164, 119, 0.99)
+            margin: 30px 0 10px 0;
+            font-size: 20px;
+            color: rgba(186, 164, 119, 1)
         }
     }
 </style>

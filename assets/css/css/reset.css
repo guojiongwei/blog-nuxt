@@ -243,8 +243,6 @@ html {
 	box-sizing: border-box;
   }
   html, body{/* 禁止选中文本 */
-	-webkit-user-select: none;
-	user-select: none;
 	font: Oswald, 'Open Sans', Helvetica, Arial, sans-serif
   }
   body{

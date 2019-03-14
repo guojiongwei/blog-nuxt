@@ -23,6 +23,15 @@
 <script>
 import axios from 'axios'
 export default {
+    head() {
+        return {
+            title: this.blogInfo.title,
+            meta: [
+                { name: 'keywords', hid: 'keywords', content: '个人博客，简约博客，郭炯韦个人博客，郭炯韦,郭炯韦' },
+                { name: 'description', hid: 'description', content: this.blogInfo.title }
+            ]
+        }
+    },
     async asyncData({ app, params }) {
         let { data } = await app.$apiGet('client_demo_api/blog/info', { params: {_id: params.id}})
         return {
