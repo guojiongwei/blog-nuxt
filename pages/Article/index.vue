@@ -12,7 +12,8 @@
                         <div class="intro fmt" v-html="blogHtml"></div>
                     </div>
                     <div class="logo">
-                        <img :src="require(`~/assets/images/source_single_${blogInfo.source === 1?1:blogInfo.source === 2?2:3}.png`)" alt="">
+                        <img src="http://sowcar.com/t6/692/1553782948x986907160.png" v-if="blogInfo.source === 1" alt="">
+                        <img v-else :src="require(`~/assets/images/source_single_${blogInfo.source === 2?2:3}.png`)" alt="">
                     </div>
                 </div>
             </div>

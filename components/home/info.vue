@@ -29,7 +29,7 @@
             height: 80px;
             border-radius: 50%;
             border: 2px solid rgba(186, 164, 119, 0.99);
-            background: url("~assets/images/avatar.png") no-repeat center center;
+            background: url("http://sowcar.com/t6/692/1553782948x986907160.png") no-repeat center center;
             background-size: 100% 100%;
             margin: 0 auto;
             &:hover {
