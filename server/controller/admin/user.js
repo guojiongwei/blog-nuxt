@@ -25,7 +25,7 @@ module.exports = {
             }
             let token = jwt.sign(payload, conf.auth.admin_secret, {expiresIn: '24h'})  //token签名 有效期为24小时
             ctx.cookies.set(conf.auth.tokenKey, token, {
-                domain: '*',
+                domain: 'admin.guojiongwei.com',
                 httpOnly: false,  // 是否只用于http请求中获取
             });
             console.log('登陆成功')
