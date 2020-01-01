@@ -31,7 +31,7 @@ const httpsOption = {
   //   port = process.env.PORT || 80
   // } = nuxt.options.server
   const host = '0.0.0.0'
-  const port = 80
+  const port = 444
   // Build in development
   if (config.dev) {
     const builder = new Builder(nuxt)
