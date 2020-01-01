@@ -63,7 +63,7 @@ export default {
             
 
             .box {
-                padding: 0.3rem 0.6rem;
+                padding: 0.3rem 0.3rem;
                 border: 1px dashed #c9c9c7;
                 position: relative;
                 .github {
