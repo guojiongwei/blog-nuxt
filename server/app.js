@@ -45,9 +45,10 @@ const httpsOption = {
     ctx.req.ctx = ctx // This might be useful later on, e.g. in nuxtServerInit or with nuxt-stash
     nuxt.render(ctx.req, ctx.res)
   })
-  // app.listen(80, host)
+  app.listen(port, host)
   // app.listen(httpsOption,port, host)
-  https.createServer(httpsOption, app.callback()).listen(port, host);
+  // https.createServer(httpsOption, app.callback()).listen(port, host);
+  
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true

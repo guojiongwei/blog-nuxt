@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
-axios.defaults.baseURL = process.env.NODE_ENV == 'production' ? 'https://guojiongwei.com/' : 'https://127.0.0.1/'
+axios.defaults.baseURL = process.env.NODE_ENV == 'production' ? '/' : '/'
 function apiGet (url, params) {
     return axios.get(url, params).then(res => {
         return res
