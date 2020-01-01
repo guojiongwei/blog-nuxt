@@ -29,9 +29,6 @@
                 ],
                 blogList: data.data
             }
-        },
-        mounted() {
-            console.log(this.blogList)
         }
     }
 </script>

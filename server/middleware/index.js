@@ -4,7 +4,7 @@ import staticFiles from 'koa-static'
 import Rule from './rule'
 import Send from './send'
 import Auth from './auth'
-import Log from './log'
+// import Log from './log'
 import Func from './func'
 import history from 'koa2-connect-history-api-fallback'
 import compress from 'koa-compress'
@@ -29,7 +29,7 @@ export default app => {
     })
 
     // 日志中间件
-    app.use(Log())
+    // app.use(Log())
 
     // 数据返回的封装
     app.use(Send())
