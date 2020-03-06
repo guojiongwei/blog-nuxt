@@ -21,12 +21,11 @@
                     { name: 'CSS' },
                     { name: 'JavaScript' },
                     { name: 'Vue' },
+                    { name: 'react' },
+                    { name: 'angular' },
                     { name: 'Webpack' },
                     { name: 'Node' },
-                    { name: 'MongoDB' },
                     { name: '算法' },
-                    { name: '工具' },
-                    { name: '黑科技' }
                 ],
                 blogList: data.data
             }

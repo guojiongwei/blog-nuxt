@@ -7,10 +7,10 @@ module.exports = {
         let { type = '', pageindex = 1, pagesize = 10} = ctx.request.query;
         try {
             if(type) {
-                let data = await ctx.find(blogModel, {type, isVisible: true, source: 1}, { html: 0, markdown: 0 }, {limit: pagesize*1, skip: (pageindex-1)*pagesize, sort: {level: -1, createTime: -1}});
+                let data = await ctx.find(blogModel, {type, isVisible: true, source: 1}, { html: 0, markdown: 0, createTime: 0 }, {limit: pagesize*1, skip: (pageindex-1)*pagesize, sort: {level: -1, createTime: -1}});
                 return ctx.send(data)
             } else {
-                let data = await ctx.find(blogModel, {}, { html: 0, markdown: 0 }, {limit: pagesize*1, skip: (pageindex-1)*pagesize, sort: {level: -1, createTime: -1}});
+                let data = await ctx.find(blogModel, {}, { html: 0, markdown: 0, createTime: 0 }, {limit: pagesize*1, skip: (pageindex-1)*pagesize, sort: {level: -1, createTime: -1}});
                 return ctx.send(data)
             }
         }catch (e){
