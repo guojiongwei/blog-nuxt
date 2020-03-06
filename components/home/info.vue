@@ -29,7 +29,7 @@
             height: 80px;
             border-radius: 50%;
             border: 2px solid rgba(186, 164, 119, 0.99);
-            background: url("/WechatIMG45.jpeg") no-repeat center center;
+            background: url("~assets/images/avatar.png") no-repeat center center;
             background-size: 100% 100%;
             margin: 0 auto;
             &:hover {

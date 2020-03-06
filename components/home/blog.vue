@@ -10,7 +10,7 @@
                 </div>
                 <div class="desc">{{v.desc}}</div>
                 <div class="source">
-                    <img src="http://sowcar.com/t6/692/1553782948x986907160.png" v-if="v.source === 1" alt="">
+                    <img src="@/assets/images/source_single_1.png" v-if="v.source === 1" alt="">
                     <img v-else :src="require(`~/assets/images/source_single_${v.source === 2?2:3}.png`)" alt="">
                 </div>
             </li>
@@ -136,6 +136,7 @@
                 text-align: right;
                 img {
                     width: 30px;
+                    border-radius: 50%;
                 }
             
             }
