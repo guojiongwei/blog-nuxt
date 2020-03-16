@@ -9,7 +9,13 @@ import router from './router'
 import middleware from './middleware'
 import './mongodb'
 const { Nuxt, Builder } = require('nuxt')
-
+const unhandledRejections = new Map(); //捕捉promise reject
+process.on('unhandledRejection', (reason, p) => {
+    unhandledRejections.set(p, reason);
+});
+process.on('rejectionHandled', (p) => {
+    unhandledRejections.delete(p);
+});
 const app = new Koa()
 middleware(app)
 router(app)

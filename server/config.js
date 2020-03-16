@@ -22,7 +22,8 @@ export default {
     mongodb: {
         username: 'guojiongwei',
         pwd: 123456,
-        address: '127.0.0.1:27017',
+        address: '39.107.107.224:27017',
         db: 'wuyou'
     }
 }
+     
