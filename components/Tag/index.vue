@@ -45,7 +45,7 @@ export default {
         position: relative;
         border-radius: 0 5px 5px 0;
         margin: 5px 9px 5px 8px;
-
+        cursor: pointer;
         i {
             position: absolute;
             right: 100%;

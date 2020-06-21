@@ -49,8 +49,7 @@
             animation-fill-mode: forwards;
             color: #42484b;
             background-image: url('~assets/images/note-bg.jpg');
-            
-        
+            cursor: pointer;
             &:hover {
                 box-shadow: 5px 15px 30px 5px rgba(0, 0, 0, 0.15);
             }

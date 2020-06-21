@@ -40,7 +40,8 @@ module.exports = {
   plugins: [
     '~/plugins/custom-components.js', 
     '~/plugins/filters.js', 
-    '~/plugins/axios.js'
+    '~/plugins/axios.js',
+    { src: '~/plugins/baidu.js', ssr: false }
   ],
 
   /*
