@@ -37,7 +37,7 @@ export default {
         let { data } = await app.$apiGet('client_demo_api/blog/info', { params: {_id: params.id}})
         return {
             blogInfo: data.data,
-            blogHtml: data.data.html.replace(/<a /gi, `<a target='_blank'`).replace(/<img /g, '<img lazyload="on"')
+            blogHtml: data.data.html.replace(/<a /gi, `<a target='_blank'`).replace(/<img /g, '<img lazyload="auto" loading="lazy"')
         }
     }
 }
