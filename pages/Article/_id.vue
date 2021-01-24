@@ -37,7 +37,7 @@ export default {
         let { data } = await app.$apiGet('client_demo_api/blog/info', { params: {_id: params.id}})
         return {
             blogInfo: data.data,
-            blogHtml: data.data.html.replace(/<a /gi, `<a target='_blank'`)
+            blogHtml: data.data.html.replace(/<a /gi, `<a target='_blank'`).replace(/<img /g, '<img lazyload="on"')
         }
     }
 }
@@ -60,7 +60,7 @@ export default {
             padding: 10px;
             background: #f9f9f3 url('~assets/images/note-bg.jpg');
             text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25);
-            
+
 
             .box {
                 padding: 0.3rem 0.3rem;
@@ -91,7 +91,7 @@ export default {
                         @media screen and (max-width: 767px){
                             font-size: 12px;
                         }
-                        
+
                     }
                 }
 
