@@ -38,8 +38,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/custom-components.js', 
-    '~/plugins/filters.js', 
+    '~/plugins/custom-components.js',
+    '~/plugins/filters.js',
     '~/plugins/axios.js',
     { src: '~/plugins/baidu.js', ssr: false }
   ],
@@ -52,6 +52,13 @@ module.exports = {
     'bootstrap-vue/nuxt',
   ],
 
+  hooks: {
+    'vue-renderer:ssr:context'(context) {
+      const routePath = JSON.stringify(context.nuxt.routePath)
+      context.nuxt = { serverRendered: true, routePath }
+    }
+  },
+  telemetry: false,
   /*
   ** Build configuration
   */
@@ -61,7 +68,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }

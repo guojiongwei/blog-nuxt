@@ -30,7 +30,7 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 	.tag-wrapper {
 		font-size: 12px;
         display: inline-block;
@@ -49,8 +49,8 @@ export default {
         i {
             position: absolute;
             right: 100%;
-            font-size: 0;  
-            line-height: 0;  
+            font-size: 0;
+            line-height: 0;
             border: 9px solid transparent;
         }
 

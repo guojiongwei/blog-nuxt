@@ -9,7 +9,7 @@
         </div>
     </div>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .loading-wrapper-phone {
         position: fixed;
         z-index: 1000;

@@ -22,18 +22,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .github-corner {
-        fill:#4AB7BD; 
-        color:#fff; 
-        position: absolute; 
+        fill:#4AB7BD;
+        color:#fff;
+        position: absolute;
         top: 50px; border: 0; right: 0;
 
         &:hover .octo-arm {
             animation: octocat-wave 560ms ease-in-out
         }
     }
-    
+
     @keyframes octocat-wave {
         0%,100% {
             transform: rotate(0)

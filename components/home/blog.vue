@@ -31,7 +31,7 @@
         }
     }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .blog-wrapper {
         @keyframes change {
             100% {opacity: 1;}
@@ -137,7 +137,7 @@
                     width: 30px;
                     border-radius: 50%;
                 }
-            
+
             }
             .btns {
                 position: absolute;

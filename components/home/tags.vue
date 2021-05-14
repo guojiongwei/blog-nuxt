@@ -10,7 +10,7 @@
         props: ['blogTypes']
     }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .tags-wrapper {
         max-width: 7rem;
         margin: 20px auto;

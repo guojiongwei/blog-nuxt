@@ -44,7 +44,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .title {
         text-align: center;
         margin: 20px 0;

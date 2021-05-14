@@ -14,7 +14,7 @@
         async asyncData({ app, params }) {
             let { data } = await app.$apiGet('client_demo_api/blog/list', { params: {type: params.type, pagesize: 10}})
             return {
-                blogTypes: [ 
+                blogTypes: [
                     { name: '全部' },
                     { name: 'HTML' },
                     { name: 'CSS' },
@@ -33,7 +33,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     @media screen and (min-width: 767px) {
         .tags-box {
             width: 30%;

@@ -46,7 +46,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .title {
         text-align: center;
         margin: 20px 0;
@@ -63,7 +63,7 @@ export default {
             padding: 10px;
             background: #f9f9f3 url('~assets/images/note-bg.jpg');
             text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25);
-            
+
 
             .box {
                 padding: 0.3rem 0.3rem;
@@ -94,7 +94,7 @@ export default {
                         @media screen and (max-width: 767px){
                             font-size: 12px;
                         }
-                        
+
                     }
                 }
 

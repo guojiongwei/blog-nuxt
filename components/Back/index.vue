@@ -17,14 +17,14 @@
                 if (this.path) {
                     this.$router.push(this.path)
                 }else{
-                   this.$router.go(-1) 
+                   this.$router.go(-1)
                 }
 	        }
 		}
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 	.back-wrapper {
 		// padding: 20px 0;
         width: 40px;
@@ -57,7 +57,7 @@
 
         span {
             font-size: 12px;
-            
+
         }
     }
 </style>

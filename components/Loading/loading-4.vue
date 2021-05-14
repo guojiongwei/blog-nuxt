@@ -5,7 +5,7 @@
         <div class="dot2"></div>
     </div>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .spinner {
         margin: 0 auto;
         width: 90px;

@@ -6,7 +6,7 @@
         </div>
     </section>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 /* 垂直居中 */
     .df-center {
         display:flex;

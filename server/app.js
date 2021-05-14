@@ -1,10 +1,7 @@
 const Koa = require('koa')
 const consola = require('consola')
-import conf from './config'
 import fs from 'fs'
-import https from 'https'
 import path from 'path'
-import enforceHttps from 'koa-sslify'
 import router from './router'
 import middleware from './middleware'
 import './mongodb'
@@ -20,7 +17,7 @@ const app = new Koa()
 middleware(app)
 router(app)
 // app.use(enforceHttps())
-// Import and Set Nuxt.js options 
+// Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production')
 
@@ -54,7 +51,7 @@ const httpsOption = {
   app.listen(port, host)
   // app.listen(httpsOption,port, host)
   // https.createServer(httpsOption, app.callback()).listen(port, host);
-  
+
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true
