@@ -16,7 +16,7 @@
     .info-wrapper {
         width: 100%;
         background: rgba(186,164,119,0.99);
-        background-image: url('https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3789107209,4022882299&fm=26&gp=0.jpg');
+        background-image: url('~assets/images/banner.jpg');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center center;
