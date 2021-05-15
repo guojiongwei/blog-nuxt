@@ -16,10 +16,8 @@
             <div class="intro fmt" v-html="blogHtml"></div>
           </div>
           <div class="logo">
-            <img
-              src="~/assets/images/source_single_1.jpg"
+            <Avatar
               v-if="blogInfo.source === 1"
-              alt=""
             />
             <img
               v-else

@@ -10,7 +10,7 @@
                 </div>
                 <div class="desc">{{v.desc}}</div>
                 <div class="source">
-                    <img src="@/assets/images/source_single_1.jpg" v-if="v.source === 1" alt="">
+                    <Avatar v-if="v.source === 1" />
                     <img v-else :src="require(`~/assets/images/source_single_${v.source === 2?2:3}.png`)" alt="">
                 </div>
             </nuxt-link>

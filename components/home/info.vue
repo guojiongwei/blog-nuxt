@@ -1,7 +1,7 @@
 <template>
-  <section class="info-wrapper df-center">
+  <section class="info-wrapper df-center banner-bg">
     <div class="info-box">
-      <div class="avatar"></div>
+      <Avatar class="avatar" />
       <h2 class="name">郭炯韦的个人博客</h2>
     </div>
   </section>
@@ -15,8 +15,8 @@
 }
 .info-wrapper {
   width: 100%;
-  background: rgba(186, 164, 119, 0.99);
-  background-image: url("~assets/images/banner.jpg");
+  // background: rgba(186, 164, 119, 0.99);
+  // background-image: url("~assets/images/banner.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -29,7 +29,6 @@
     height: 80px;
     border-radius: 50%;
     border: 2px solid rgba(186, 164, 119, 0.99);
-    background: url("~assets/images/source_single_1.jpg") no-repeat center center;
     background-size: 100% 100%;
     margin: 0 auto;
     &:hover {
