@@ -14,16 +14,16 @@ export default {
   },
   methods: {
     back() {
-      this.$router.replace({
-        path: "/",
-      });
-      return
+      // this.$router.replace({
+      //   path: "/",
+      // });
+      // return;
       if (
         navigator.userAgent.indexOf("MSIE") >= 0 &&
         navigator.userAgent.indexOf("Opera") < 0
       ) {
         // IE
-        if (history.length > 0) {
+        if (history.length > 1) {
           this.$router.go(-1);
         } else {
           this.$router.replace({
@@ -39,7 +39,7 @@ export default {
           navigator.userAgent.indexOf("Chrome") >= 0 ||
           navigator.userAgent.indexOf("WebKit") >= 0
         ) {
-          if (window.history.length > 1) {
+          if (window.history.length > 2) {
             this.$router.go(-1);
           } else {
             this.$router.replace({

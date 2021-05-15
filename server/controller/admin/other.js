@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     async markdown_upload_img (ctx, next) {
-        console.log('----------------添加图片 markdown_upload_img-----------------------');
+        // console.log('----------------添加图片 markdown_upload_img-----------------------');
         let opts = {
             path: path.resolve(__dirname, '../../../../public')
         }
@@ -11,7 +11,7 @@ module.exports = {
     },
 
     async del_markdown_upload_img (ctx, next) {
-        console.log('----------------删除图片 del_markdown_upload_img-----------------------');
+        // console.log('----------------删除图片 del_markdown_upload_img-----------------------');
         let id = ctx.request.query.id
         try {
             ctx.remove(musicModel, {_id: id})

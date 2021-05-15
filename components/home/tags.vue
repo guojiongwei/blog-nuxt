@@ -1,22 +1,24 @@
 <template>
-    <div class="tags-wrapper">
-        <ul>
-            <li v-for="(tag,index) in blogTypes" :key="index"><Tag :text="tag.name" :path="tag.name"></Tag></li>
-        </ul>
-    </div>
+  <div class="tags-wrapper">
+    <ul>
+      <li v-for="(tag, index) in blogTypes" :key="index">
+        <Tag :text="tag.name" :path="tag.name"></Tag>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
-    export default {
-        props: ['blogTypes']
-    }
+export default {
+  props: ["blogTypes"],
+};
 </script>
 <style lang="less" scoped>
-    .tags-wrapper {
-        max-width: 7rem;
-        margin: 20px auto;
-        margin-bottom: 0;
-    }
-    .tags-box li{
-        display: inline-block;
-    }
+.tags-wrapper {
+  max-width: 7rem;
+  margin: 20px auto;
+  margin-bottom: 0;
+}
+.tags-box li {
+  display: inline-block;
+}
 </style>

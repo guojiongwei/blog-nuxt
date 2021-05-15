@@ -1,7 +1,7 @@
 <template>
     <section class="blog-wrapper">
-        <ul v-if="blogList.length > 0">
-            <li class="article" v-for="(v, index) in blogList" :key="index" :style="{'animation-delay': index%5*0.2+'s'}" @click="$router.push(`/article/${v._id}`)" :index='index'>
+        <div v-if="blogList.length > 0">
+            <nuxt-link class="article note-bg" v-for="(v, index) in blogList" :key="index" :to="`/article/${v._id}`" :index='v._id'>
                 <Github class="github mouse-pointer" background="rgba(186, 164, 119, 0.99)" :link="v.github" v-if="v.github"></Github>
                 <time>{{v.releaseTime | parseTime('{y}-{m}-{d}')}}</time>
                 <h2 class="name">{{v.title}}</h2>
@@ -10,13 +10,12 @@
                 </div>
                 <div class="desc">{{v.desc}}</div>
                 <div class="source">
-                    <img src="@/assets/images/source_single_1.png" v-if="v.source === 1" alt="">
+                    <img src="@/assets/images/source_single_1.jpg" v-if="v.source === 1" alt="">
                     <img v-else :src="require(`~/assets/images/source_single_${v.source === 2?2:3}.png`)" alt="">
                 </div>
-            </li>
-        </ul>
+            </nuxt-link>
+        </div>
         <NoneData v-else></NoneData>
-        <!-- <Loading v-show="blogLoadingMore"></Loading> -->
     </section>
 </template>
 <script>
@@ -28,7 +27,7 @@
                     return []
                 }
             }
-        }
+        },
     }
 </script>
 <style lang="less" scoped>
@@ -37,6 +36,7 @@
             100% {opacity: 1;}
         }
         .article {
+            display: block;
             width: 7rem;
             max-width: 500px;
             padding-bottom: 70px;
@@ -48,7 +48,6 @@
             animation: change 1s;
             animation-fill-mode: forwards;
             color: #42484b;
-            background-image: url('~assets/images/note-bg.jpg');
             cursor: pointer;
             &:hover {
                 box-shadow: 5px 15px 30px 5px rgba(0, 0, 0, 0.15);

@@ -1,10 +1,10 @@
 <template>
-	<div v-if="path" @click="go()" :style="{display: 'inline-block'}">
+	<nuxt-link v-if="path" :to='path === "全部" ? "/" : `/Home/${path}` ' :style="{display: 'inline-block'}">
 		<div class="tag-wrapper" :style="{backgroundColor: color}">
 			<i :style="{borderRightColor: color}"></i>
 			{{text}}
 		</div>
-	</div>
+	</nuxt-link>
 </template>
 
 <script>
