@@ -15,8 +15,6 @@
 }
 .info-wrapper {
   width: 100%;
-  // background: rgba(186, 164, 119, 0.99);
-  // background-image: url("~assets/images/banner.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
