@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less" >
 @media screen and (min-width: 767px) {
   .tags-box {
     width: 30%;

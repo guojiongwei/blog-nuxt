@@ -1,12 +1,8 @@
 <template>
   <div class="home-wrapper cf">
     <Info></Info>
-    <div class="tags-box">
-      <Tags :blogTypes="blogTypes"></Tags>
-    </div>
-    <div class="view-box">
-      <Blog :blogList="blogList"></Blog>
-    </div>
+    <Tags :blogTypes="blogTypes"></Tags>
+    <Blog :blogList="blogList"></Blog>
   </div>
 </template>
 <script>
@@ -30,14 +26,11 @@ export default {
       ],
       blogList: data.data,
     };
-  },
-  mounted() {
-    console.log(111)
   }
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less" >
 @media screen and (min-width: 767px) {
   .tags-box {
     width: 30%;

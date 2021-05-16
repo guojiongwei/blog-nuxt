@@ -3,7 +3,7 @@
 		<img src="~assets/images/none-data.png" alt="">
 	</div>
 </template>
-<style lang="less" scoped>
+<style lang="less" >
 	.none-data-wrapper {
 		text-align: center;
 		.none-data-icon {

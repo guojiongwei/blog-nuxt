@@ -1,12 +1,12 @@
 <template>
   <section class="info-wrapper df-center banner-bg">
     <div class="info-box">
-      <Avatar class="avatar" />
+      <Avatar class="avatar" :width='80' :height='80' />
       <h2 class="name">郭炯韦的个人博客</h2>
     </div>
   </section>
 </template>
-<style lang="less" scoped>
+<style lang="less" >
 /* 垂直居中 */
 .df-center {
   display: flex;

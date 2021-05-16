@@ -3,7 +3,7 @@
     <nuxt />
     <div class="beian">
       郭炯韦个人博客 备案号:<a
-        rel="nofollow"
+        rel="noopener"
         target="_blank"
         href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=豫ICP备17048833号-2&token=2be051c1-22dd-44ec-9f4b-d41155f2d855"
       >

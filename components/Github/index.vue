@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less" >
     .github-corner {
         fill:#4AB7BD;
         color:#fff;

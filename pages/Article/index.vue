@@ -16,7 +16,7 @@
             <div class="intro fmt" v-html="blogHtml"></div>
           </div>
           <div class="logo">
-            <Avatar
+            <Avatar :width='30' :height='30'
               v-if="blogInfo.source === 1"
             />
             <img
@@ -75,7 +75,7 @@ export default {
 </script>
 
 
-<style lang="less" scoped>
+<style lang="less" >
 .title {
   text-align: center;
   margin: 20px 0;

@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less" >
 .back-wrapper {
   // padding: 20px 0;
   width: 40px;
