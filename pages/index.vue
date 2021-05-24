@@ -13,7 +13,7 @@
 export default {
   async asyncData({ app, params }) {
     let { data } = await app.$apiGet("client_demo_api/blog/list", {
-      params: { type: params.type, pagesize: 10 },
+      params: { type: params.type, pagesize: 100 },
     });
     return {
       blogTypes: [
