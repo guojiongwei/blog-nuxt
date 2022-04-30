@@ -108,6 +108,7 @@ export default {
           margin-bottom: 20px;
           text-align: center;
           color: #db5640;
+          font-size: 28px;
         }
         time {
           color: #b2b2ae;
