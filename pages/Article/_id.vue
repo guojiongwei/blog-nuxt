@@ -15,7 +15,7 @@
             <time>{{ blogInfo.releaseTime | parseTime("{y}-{m}-{d}") }}</time>
             <div class="intro fmt" v-html="blogHtml"></div>
           </div>
-          <div class="logo">
+          <!-- <div class="logo">
             <Avatar :width='30' :height='30'
               v-if="blogInfo.source === 1"
             />
@@ -28,7 +28,7 @@
               "
               alt=""
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
