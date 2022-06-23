@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <ul class="sidebar-meuns">
+    <ul class="sidebar-meuns" ref="meuns">
       <li v-for="(item, index) in meuns" :key="index">
         <span @click="onScrollTo(item.offsetTop)" :style="{color: activeMeuns === item.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}">{{item.title}}</span>
         <span  class="sub-meuns" v-for="(subItem, subIndex) in item.children" :key="subIndex"
@@ -77,7 +77,8 @@ export default {
         .replace(/<img /g, '<img lazyload="auto" loading="lazy"'),
       meuns: [],
       activeMeuns: '',
-      scrollTopList: []
+      scrollTopList: [],
+      flag: false
     };
   },
   mounted() {
@@ -87,30 +88,30 @@ export default {
   methods: {
     onScrollTop() {
       let that = this
-      let flag = false
       let target = this.$refs.articleWrap
-      let sidebarMeuns = document.querySelector('.sidebar-meuns')
+      let sidebarMeuns = this.$refs.meuns
       target.onscroll = onScrollTop
 
       function onScrollTop(e) {
-        if(flag) return
-        flag = true
-        setTimeout(() => flag = false, 1000)
+        if(that.flag) return
+        that.flag = true
+        setTimeout(() => that.flag = false, 1000)
         for(let i = 0; i < that.scrollTopList.length; i ++) {
           if(that.scrollTopList[i] > e.target.scrollTop) {
-            that.activeMeuns = that.scrollTopList[i-1] || that.scrollTopList[i]
+            that.activeMeuns = that.scrollTopList[i-1] || that.scrollTopList[0]
             sidebarMeuns.scrollTop = i * 30 -150
             return
           }
         }
       }
-      onScrollTop({target})
       this.$once('hook:beforeDestroy', () => target.onscroll = null)
     },
     onScrollTo(offsetTop) {
       this.activeMeuns = offsetTop
       let target = this.$refs.articleWrap
-      target.scrollTop = offsetTop + 80
+      this.flag = true
+      setTimeout(() => this.flag = false, 300)
+      target.scrollTop = offsetTop
     },
     onCreateMeuns() {
       const bolgInfo = document.getElementById('bolg-info')
@@ -141,7 +142,11 @@ export default {
       this.meuns = meuns
     },
     onTop() {
+      this.flag = true
+      setTimeout(() => this.flag = false, 300)
       let target = this.$refs.articleWrap
+      this.activeMeuns = this.scrollTopList[0]
+      this.$refs.meuns.scrollTop = 0
       const scrollToTop = () => {
         const c = target ? target.scrollTop : document.body.scrollTop;
         if (c > 0) {
