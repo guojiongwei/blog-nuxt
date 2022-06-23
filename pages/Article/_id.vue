@@ -34,9 +34,9 @@
     </div>
     <ul class="sidebar-meuns" ref="meuns">
       <li v-for="(item, index) in meuns" :key="index">
-        <span @click="onScrollTo(item.offsetTop)" :style="{color: activeMeuns === item.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}">{{item.title}}</span>
+        <span @click="onScrollTo(item)" :style="{color: activeMeuns === item.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}">{{item.title}}</span>
         <span  class="sub-meuns" v-for="(subItem, subIndex) in item.children" :key="subIndex"
-         @click="onScrollTo(subItem.offsetTop)" :style="{color: activeMeuns === subItem.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}"
+         @click="onScrollTo(subItem)" :style="{color: activeMeuns === subItem.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}"
         >{{subItem.title}}</span>
       </li>
     </ul>
@@ -78,7 +78,8 @@ export default {
       meuns: [],
       activeMeuns: '',
       scrollTopList: [],
-      flag: false
+      flag: false,
+      titleEleMap: {}
     };
   },
   mounted() {
@@ -106,40 +107,49 @@ export default {
       }
       this.$once('hook:beforeDestroy', () => target.onscroll = null)
     },
-    onScrollTo(offsetTop) {
-      this.activeMeuns = offsetTop
-      let target = this.$refs.articleWrap
+    onScrollTo(item) {
+      this.activeMeuns = item.offsetTop
       this.flag = true
       setTimeout(() => this.flag = false, 300)
-      target.scrollTop = offsetTop
+      let target = this.$refs.articleWrap
+      target.scrollTop = this.titleEleMap[item.index].offsetTop
     },
     onCreateMeuns() {
-      const bolgInfo = document.getElementById('bolg-info')
-      let childrens = bolgInfo.childNodes
-      const meuns = []
-      let current
-      for(let i = 0; i < childrens.length; i ++) {
-        const child = childrens[i]
-        if(child.nodeName === 'H2') {
-          current = {
-            title: child.textContent,
-            offsetTop: child.offsetTop,
-            children: []
+      setTimeout(() => {
+        const bolgInfo = document.getElementById('bolg-info')
+        let childrens = bolgInfo.childNodes
+        const meuns = []
+        let current
+        let index = 0
+        for(let i = 0; i < childrens.length; i ++) {
+          const child = childrens[i]
+          if(child.nodeName === 'H2') {
+            current = {
+              title: child.textContent,
+              offsetTop: child.offsetTop,
+              children: [],
+              index
+            }
+            if(!this.activeMeuns) {
+              this.activeMeuns = child.offsetTop
+            }
+            meuns.push(current)
+            this.scrollTopList.push(child.offsetTop)
+            this.titleEleMap[index] = child
+            index ++
+          } else if(child.nodeName === 'H3') {
+            current.children.push({
+              title: child.textContent,
+              offsetTop: child.offsetTop,
+              index
+            })
+            this.scrollTopList.push(child.offsetTop)
+            this.titleEleMap[index] = child
+            index ++
           }
-          if(!this.activeMeuns) {
-            this.activeMeuns = child.offsetTop
-          }
-          meuns.push(current)
-          this.scrollTopList.push(child.offsetTop)
-        } else if(child.nodeName === 'H3') {
-          current.children.push({
-            title: child.textContent,
-            offsetTop: child.offsetTop,
-          })
-          this.scrollTopList.push(child.offsetTop)
         }
-      }
-      this.meuns = meuns
+        this.meuns = meuns
+      }, 100)
     },
     onTop() {
       this.flag = true
