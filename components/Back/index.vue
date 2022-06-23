@@ -62,13 +62,14 @@ export default {
   width: 40px;
   height: 40px;
   display: inline-block;
-  position: relative;
   z-index: 999;
   border-radius: 50%;
   background: #f9f9f3;
   text-align: center;
   line-height: 40px;
   margin: 20px 0;
+  position: fixed;
+  left: calc(50vw - 550px);
 
   > * {
     vertical-align: middle;

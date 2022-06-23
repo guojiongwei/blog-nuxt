@@ -32,10 +32,12 @@
         </div>
       </div>
     </div>
+    <BeiAn />
   </article>
 </template>
 
 <script>
+import './index.less'
 export default {
   head() {
     return {
@@ -73,70 +75,3 @@ export default {
   },
 };
 </script>
-
-
-<style lang="less" >
-.title {
-  text-align: center;
-  margin: 20px 0;
-}
-.article-wrapper {
-  width: 7rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  padding-top: 0;
-
-  .content {
-    width: 100%;
-    padding: 10px;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25);
-
-    .box {
-      padding: 0.3rem 0.3rem;
-      border: 1px dashed #c9c9c7;
-      position: relative;
-      .github {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
-      .entry {
-        line-height: 30px;
-        h1 {
-          margin-bottom: 20px;
-          text-align: center;
-          color: #db5640;
-          font-size: 28px;
-        }
-        time {
-          color: #b2b2ae;
-          font-size: 12px;
-          margin-bottom: 20px;
-          display: block;
-          text-align: center;
-        }
-        .intro {
-          overflow-x: scroll;
-          font-size: 14px;
-          @media screen and (max-width: 767px) {
-            font-size: 12px;
-          }
-        }
-      }
-
-      .logo {
-        margin-top: 30px;
-        margin-right: -20px;
-        text-align: right;
-        // padding-right: 0.3rem;
-        img {
-          width: 50px;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-}
-</style>

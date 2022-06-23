@@ -7,6 +7,7 @@
     <div class="view-box">
       <Blog :blogList="blogList"></Blog>
     </div>
+    <BeiAn />
   </div>
 </template>
 <script>

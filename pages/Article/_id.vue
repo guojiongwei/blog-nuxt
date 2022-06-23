@@ -1,5 +1,5 @@
 <template>
-  <article v-if="blogInfo" class="article-wrap">
+  <article v-if="blogInfo" class="article-wrap" ref="articleWrap">
     <!-- <h1 class="title">{{blogInfo.title}}</h1> -->
     <div class="article-wrapper">
       <Back></Back>
@@ -40,10 +40,14 @@
         >{{subItem.title}}</span>
       </li>
     </ul>
+    <BeiAn />
+    <toTop @click="onTop"></toTop>
   </article>
 </template>
 
 <script>
+
+import './index.less'
 export default {
   head() {
     return {
@@ -84,14 +88,14 @@ export default {
     onScrollTop() {
       let that = this
       let flag = false
-      let target = document.querySelector('.bolg-wrap')
+      let target = this.$refs.articleWrap
       let sidebarMeuns = document.querySelector('.sidebar-meuns')
       target.onscroll = onScrollTop
 
       function onScrollTop(e) {
         if(flag) return
         flag = true
-        setTimeout(() => flag = false, 300)
+        setTimeout(() => flag = false, 1000)
         for(let i = 0; i < that.scrollTopList.length; i ++) {
           if(that.scrollTopList[i] > e.target.scrollTop) {
             that.activeMeuns = that.scrollTopList[i-1] || that.scrollTopList[i]
@@ -101,10 +105,11 @@ export default {
         }
       }
       onScrollTop({target})
+      this.$once('hook:beforeDestroy', () => target.onscroll = null)
     },
     onScrollTo(offsetTop) {
       this.activeMeuns = offsetTop
-      let target = document.querySelector('.bolg-wrap')
+      let target = this.$refs.articleWrap
       target.scrollTop = offsetTop + 80
     },
     onCreateMeuns() {
@@ -134,97 +139,18 @@ export default {
         }
       }
       this.meuns = meuns
+    },
+    onTop() {
+      let target = this.$refs.articleWrap
+      const scrollToTop = () => {
+        const c = target ? target.scrollTop : document.body.scrollTop;
+        if (c > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          target.scrollTo(0, c - c / 4);
+        }
+      }
+      scrollToTop()
     }
   }
 };
 </script>
-
-
-<style lang="less" >
-.title {
-  text-align: center;
-  margin: 20px 0;
-}
-.article-wrapper {
-  width: 7rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  padding-top: 0;
-  .content {
-    width: 100%;
-    padding: 10px;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25);
-
-    .box {
-      padding: 0.3rem 0.3rem;
-      border: 1px dashed #c9c9c7;
-      position: relative;
-      .github {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
-      .entry {
-        line-height: 30px;
-        h1 {
-          margin-bottom: 20px;
-          text-align: center;
-          color: #db5640;
-          font-size: 28px;
-        }
-        time {
-          color: #b2b2ae;
-          font-size: 12px;
-          margin-bottom: 20px;
-          display: block;
-          text-align: center;
-        }
-        .intro {
-          overflow-x: scroll;
-          font-size: 14px;
-          @media screen and (max-width: 767px) {
-            font-size: 12px;
-          }
-        }
-      }
-
-      .logo {
-        margin-top: 30px;
-        margin-right: -20px;
-        text-align: right;
-        // padding-right: 0.3rem;
-        img {
-          width: 50px;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-}
-.bolg-wrap {
-  height: 100vh;
-  overflow: auto;
-}
-.article-wrap {
-  position:relative;
-}
-.sidebar-meuns {
-  position: fixed;
-  top:140px;
-  left: calc(50vw + 500px);
-  max-height: 2rem;
-  overflow: auto;
-  min-width: 200px;
-  font-size: 14px;
-  span{
-    display: block;
-    color: rgba(186,164,119,.99);
-    cursor: pointer;
-  }
-  .sub-meuns {
-    text-indent: 0.1rem;
-  }
-}
-</style>

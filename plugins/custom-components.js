@@ -7,6 +7,8 @@ import Tag from "~/components/Tag";
 import Github from "~/components/Github";
 import Back from "~/components/Back";
 import NoneData from "~/components/NoneData";
+import BeiAn from "~/components/BeiAn";
+import toTop from "~/components/toTop";
 
 Vue.component("Info", Info);
 Vue.component("Tags", Tags);
@@ -16,3 +18,5 @@ Vue.component("Tag", Tag);
 Vue.component("Github", Github);
 Vue.component("Back", Back);
 Vue.component("NoneData", NoneData);
+Vue.component("BeiAn", BeiAn);
+Vue.component("toTop", toTop);
