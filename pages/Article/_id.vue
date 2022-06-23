@@ -1,5 +1,5 @@
 <template>
-  <article v-if="blogInfo">
+  <article v-if="blogInfo" class="article-wrap">
     <!-- <h1 class="title">{{blogInfo.title}}</h1> -->
     <div class="article-wrapper">
       <Back></Back>
@@ -7,15 +7,15 @@
         <div class="box">
           <Github
             class="github"
-            :link="blogInfo.github"
+            :github="blogInfo.github"
             v-if="blogInfo.github"
           ></Github>
           <div class="entry">
             <h1>{{ blogInfo.title }}</h1>
             <time>{{ blogInfo.releaseTime | parseTime("{y}-{m}-{d}") }}</time>
-            <div class="intro fmt" v-html="blogHtml"></div>
+            <div class="intro fmt" id="bolg-info" v-html="blogHtml"></div>
           </div>
-          <!-- <div class="logo">
+          <div class="logo">
             <Avatar :width='30' :height='30'
               v-if="blogInfo.source === 1"
             />
@@ -28,15 +28,22 @@
               "
               alt=""
             />
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
+    <ul class="sidebar-meuns">
+      <li v-for="(item, index) in meuns" :key="index">
+        <span @click="onScrollTo(item.offsetTop)" :style="{color: activeMeuns === item.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}">{{item.title}}</span>
+        <span  class="sub-meuns" v-for="(subItem, subIndex) in item.children" :key="subIndex"
+         @click="onScrollTo(subItem.offsetTop)" :style="{color: activeMeuns === subItem.offsetTop ? '#db5640' : 'rgba(186,164,119,.99)'}"
+        >{{subItem.title}}</span>
+      </li>
+    </ul>
   </article>
 </template>
 
 <script>
-import axios from "axios";
 export default {
   head() {
     return {
@@ -64,8 +71,71 @@ export default {
       blogHtml: data.data.html
         .replace(/<a /gi, `<a target='_blank'`)
         .replace(/<img /g, '<img lazyload="auto" loading="lazy"'),
+      meuns: [],
+      activeMeuns: '',
+      scrollTopList: []
     };
   },
+  mounted() {
+    this.onCreateMeuns()
+    this.onScrollTop()
+  },
+  methods: {
+    onScrollTop() {
+      let that = this
+      let flag = false
+      let target = document.querySelector('.bolg-wrap')
+      let sidebarMeuns = document.querySelector('.sidebar-meuns')
+      target.onscroll = onScrollTop
+
+      function onScrollTop(e) {
+        if(flag) return
+        flag = true
+        setTimeout(() => flag = false, 300)
+        for(let i = 0; i < that.scrollTopList.length; i ++) {
+          if(that.scrollTopList[i] > e.target.scrollTop) {
+            that.activeMeuns = that.scrollTopList[i-1] || that.scrollTopList[i]
+            sidebarMeuns.scrollTop = i * 30 -150
+            return
+          }
+        }
+      }
+      onScrollTop({target})
+    },
+    onScrollTo(offsetTop) {
+      this.activeMeuns = offsetTop
+      let target = document.querySelector('.bolg-wrap')
+      target.scrollTop = offsetTop + 80
+    },
+    onCreateMeuns() {
+      const bolgInfo = document.getElementById('bolg-info')
+      let childrens = bolgInfo.childNodes
+      const meuns = []
+      let current
+      for(let i = 0; i < childrens.length; i ++) {
+        const child = childrens[i]
+        if(child.nodeName === 'H2') {
+          current = {
+            title: child.textContent,
+            offsetTop: child.offsetTop,
+            children: []
+          }
+          if(!this.activeMeuns) {
+            this.activeMeuns = child.offsetTop
+          }
+          meuns.push(current)
+          this.scrollTopList.push(child.offsetTop)
+        } else if(child.nodeName === 'H3') {
+          current.children.push({
+            title: child.textContent,
+            offsetTop: child.offsetTop,
+          })
+          this.scrollTopList.push(child.offsetTop)
+        }
+      }
+      this.meuns = meuns
+    }
+  }
 };
 </script>
 
@@ -127,9 +197,34 @@ export default {
         // padding-right: 0.3rem;
         img {
           width: 50px;
+          border-radius: 50%;
         }
       }
     }
+  }
+}
+.bolg-wrap {
+  height: 100vh;
+  overflow: auto;
+}
+.article-wrap {
+  position:relative;
+}
+.sidebar-meuns {
+  position: fixed;
+  top:140px;
+  left: calc(50vw + 500px);
+  max-height: 2rem;
+  overflow: auto;
+  min-width: 200px;
+  font-size: 14px;
+  span{
+    display: block;
+    color: rgba(186,164,119,.99);
+    cursor: pointer;
+  }
+  .sub-meuns {
+    text-indent: 0.1rem;
   }
 }
 </style>

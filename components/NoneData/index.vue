@@ -5,6 +5,7 @@
 </template>
 <style lang="less" >
 	.none-data-wrapper {
+    margin-top: 20px;
 		text-align: center;
 		.none-data-icon {
 			font-size: 100px;

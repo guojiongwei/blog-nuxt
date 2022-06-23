@@ -7,7 +7,7 @@
         <div class="box">
           <Github
             class="github"
-            :link="blogInfo.github"
+            :github="blogInfo.github"
             v-if="blogInfo.github"
           ></Github>
           <div class="entry">
@@ -15,7 +15,7 @@
             <time>{{ blogInfo.releaseTime | parseTime("{y}-{m}-{d}") }}</time>
             <div class="intro fmt" v-html="blogHtml"></div>
           </div>
-          <!-- <div class="logo">
+          <div class="logo">
             <Avatar :width='30' :height='30'
               v-if="blogInfo.source === 1"
             />
@@ -28,7 +28,7 @@
               "
               alt=""
             />
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -133,6 +133,7 @@ export default {
         // padding-right: 0.3rem;
         img {
           width: 50px;
+          border-radius: 50%;
         }
       }
     }

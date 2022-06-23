@@ -1,9 +1,19 @@
 {
-  "name": "bolg",
+  "name": "blop-nuxt",
   "version": "1.0.0",
-  "description": "My posh Nuxt.js project",
+  "description": "blop-nuxt",
   "author": "guojiongwei",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guojiongwei/blog-nuxt.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guojiongwei/blog-nuxt/issues"
+  },
+  "homepage": "https://github.com/guojiongwei/blog-nuxt#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
@@ -24,15 +34,15 @@
     "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "busboy": "^0.2.14",
-    "highlight.js": "^9.12.0",
     "cross-env": "^5.2.0",
+    "highlight.js": "^9.12.0",
     "jsonwebtoken": "^8.1.0",
     "koa-bodyparser": "^4.2.0",
     "koa-compress": "^3.0.0",
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.2",
     "koa2-connect-history-api-fallback": "^0.1.1",
-    "less": "^4.1.1",
+    "less": "^3.13.1",
     "less-loader": "^5.0.0",
     "log4js": "^2.4.1",
     "marked": "^0.3.12",

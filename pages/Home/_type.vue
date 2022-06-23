@@ -1,8 +1,12 @@
 <template>
   <div class="home-wrapper cf">
     <Info></Info>
-    <Tags :blogTypes="blogTypes"></Tags>
-    <Blog :blogList="blogList"></Blog>
+    <div class="tags-box">
+      <Tags :blogTypes="blogTypes"></Tags>
+    </div>
+    <div class="view-box">
+      <Blog :blogList="blogList"></Blog>
+    </div>
   </div>
 </template>
 <script>
@@ -17,31 +21,19 @@ export default {
         { name: "HTML" },
         { name: "CSS" },
         { name: "JavaScript" },
+        { name: "React" },
         { name: "Vue" },
-        { name: "react" },
+        { name: "小程序" },
+        { name: "Flutter" },
+        { name: 'electron' },
         { name: "Webpack" },
         { name: "Node" },
         { name: "算法" },
         { name: "网络协议" },
+        { name: "工具" },
       ],
       blogList: data.data,
     };
   }
 };
 </script>
-
-<style lang="less" >
-@media screen and (min-width: 767px) {
-  .tags-box {
-    width: 30%;
-    float: left;
-  }
-  .view-box {
-    width: 67%;
-    float: right;
-  }
-  .tags-wrapper {
-    margin-left: 20px;
-  }
-}
-</style>

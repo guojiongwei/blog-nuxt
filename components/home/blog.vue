@@ -11,7 +11,7 @@
         <Github
           class="github mouse-pointer"
           background="rgba(186, 164, 119, 0.99)"
-          :link="v.github"
+          :github="v.github"
           v-if="v.github"
         ></Github>
         <time>{{ v.releaseTime | parseTime("{y}-{m}-{d}") }}</time>
@@ -57,7 +57,7 @@ export default {
     display: block;
     width: 7rem;
     max-width: 500px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.08);
     margin: 30px auto;
     transition: box-shadow 0.4s;
@@ -70,15 +70,9 @@ export default {
     &:hover {
       box-shadow: 5px 15px 30px 5px rgba(0, 0, 0, 0.15);
     }
-
-    .github {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
     time {
       position: absolute;
-      bottom: 35px;
+      bottom: 25px;
       left: 0;
       width: 150px;
       height: 34px;
@@ -154,9 +148,15 @@ export default {
       width: 70%;
       margin: 0 auto;
       text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
       img {
         width: 30px;
+        position: relative;
         border-radius: 50%;
+        top: 10px;
+        left: 60px;
       }
     }
     .btns {

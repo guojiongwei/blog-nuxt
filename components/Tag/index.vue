@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link v-if="path" :to="path === '全部' ? '/' : `/Home/${path}`"  class="tag-wrapper"><i></i>{{ text }}</nuxt-link>
+  <nuxt-link v-if="path" :to="path === '全部' ? '/' : `/Home/${path}`" :style="{backgroundColor: color}" class="tag-wrapper"><i></i>{{ text }}</nuxt-link>
 </template>
 
 <script>
@@ -39,7 +39,6 @@ export default {
   border-radius: 0 5px 5px 0;
   margin: 5px 9px 5px 8px;
   cursor: pointer;
-  background: #4cae4c;
   i {
     position: absolute;
     right: 100%;
