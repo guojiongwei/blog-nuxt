@@ -1,7 +1,5 @@
 <template>
-  <div class="bolg-wrap">
-    <nuxt />
-  </div>
+  <nuxt />
 </template>
 
 <style>
