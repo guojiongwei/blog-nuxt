@@ -57,7 +57,7 @@ export default {
     display: block;
     width: 7rem;
     max-width: 500px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.08);
     margin: 30px auto;
     transition: box-shadow 0.4s;
@@ -155,8 +155,8 @@ export default {
         width: 30px;
         position: relative;
         border-radius: 50%;
-        top: 10px;
-        left: 60px;
+        top: 20px;
+        left: 50px;
       }
     }
     .btns {
