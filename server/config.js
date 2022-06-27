@@ -1,4 +1,6 @@
 import path from "path";
+import { username, pwd } from './user.js'
+
 const auth = {
   admin_secret: "admin-token",
   tokenKey: "Token-Auth",
@@ -20,8 +22,8 @@ export default {
   auth,
   log,
   mongodb: {
-    username: "guojiongwei",
-    pwd: 123456,
+    username: username,
+    pwd: pwd,
     address: "127.0.0.1:27017",
     db: "wuyou"
   }
