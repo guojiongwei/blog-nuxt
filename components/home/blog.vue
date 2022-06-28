@@ -112,6 +112,7 @@ export default {
     }
     .name {
       text-align: center;
+      word-break: break-all;
       color: #db5640;
       line-height: 30px;
       width: 80%;

@@ -30,4 +30,12 @@ export default {
     transform: scale(1.2);
   }
 }
+@media screen and(max-width: 1200px) {
+  .top-wrap {
+    right: 20px !important;
+    z-index: 1 !important;
+    background: #fff !important;
+    left: unset !important;
+  }
+}
 </style>
