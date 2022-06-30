@@ -136,6 +136,7 @@ export default {
       text-align: left;
       line-height: 30px;
       text-align: justify;
+      word-break: break-all;
       span {
         color: #b2b2ae;
         font-size: 12px;
