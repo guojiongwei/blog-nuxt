@@ -3,7 +3,7 @@ import conf from "./config";
 
 const { username, pwd, address, db } = conf.mongodb
 
-const DB_URL = `mongodb://${username}@${pwd}:${address}/${db}`; // 账号登陆
+const DB_URL = `mongodb://${username}:${pwd}@${address}/${db}`; // 账号登陆
 mongoose.Promise = global.Promise;
 console.log(DB_URL)
 mongoose.connect(DB_URL, { useMongoClient: true }, err => {
