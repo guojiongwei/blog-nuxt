@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import conf from "./config";
-// const DB_URL = `mongodb://${conf.mongodb.address}/${conf.mongodb.db}`
-const DB_URL = `mongodb://${conf.mongodb.address}/${conf.mongodb.db}`; // 账号登陆
+
+const { username, pwd, address, db } = conf.mongodb
+
+const DB_URL = `mongodb://${username}@${pwd}:${address}/${db}`; // 账号登陆
 mongoose.Promise = global.Promise;
 console.log(DB_URL)
 mongoose.connect(DB_URL, { useMongoClient: true }, err => {
