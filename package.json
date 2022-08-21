@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
+    "start": "cross-env NODE_ENV=production pm2 start --name 'blog' server/index.js",
+    "restart": "pm2 restart --name",
     "generate": "nuxt generate"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "log4js": "^2.4.1",
     "marked": "^0.3.12",
     "mongoose": "^4.13.9",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "pm2": "^5.2.0"
   }
 }
