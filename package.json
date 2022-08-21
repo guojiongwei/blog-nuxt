@@ -46,7 +46,7 @@
     "less-loader": "^5.0.0",
     "log4js": "^2.4.1",
     "marked": "^0.3.12",
-    "mongoose": "^4.13.9",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.18.9"
   }
 }
