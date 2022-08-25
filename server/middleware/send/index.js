@@ -3,7 +3,7 @@ export default () => {
     return (json, msg) => {
       ctx.set("Content-Type", "application/json");
       ctx.body = JSON.stringify({
-        code: 1,
+        code: 0,
         data: json || {},
         msg: msg || "success"
       });
@@ -13,7 +13,7 @@ export default () => {
     return msg => {
       ctx.set("Content-Type", "application/json");
       ctx.body = JSON.stringify({
-        code: 0,
+        code: 500,
         data: {},
         msg: msg.toString()
       });
