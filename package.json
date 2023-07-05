@@ -18,7 +18,8 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "pm2:start": "pm2 start npm --name 'blog-web' -- start"
   },
   "dependencies": {
     "koa": "^2.6.2",
